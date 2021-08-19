@@ -18,9 +18,7 @@ public class monster {
         ap_ar=new double[]{18,22};
         ad_ar=new double[]{24,24};
     }
-    public double Health(int id){
-        return Health[id];
-    }
+    //ability id finder
     public int abil_id(String s){
         for(int i=0;i<=abilities.length;i++){
             if(s.equals(abilities[i])){
@@ -28,9 +26,6 @@ public class monster {
             }
         }
         return -1;
-    }
-    public double damg_put(double ap,double ad,double ap_arm,double ad_arm){
-        return (ap*(ap_arm/200))+(ad*(ad_arm/200));
     }
 
 }

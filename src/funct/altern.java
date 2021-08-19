@@ -5,13 +5,26 @@ import attibut.user;
 
 public class altern {
 
+    //add monster to user inventory
     public void add(String s,int i){
-        user.inventory[i-1]=s;
-        user.damage[i-1]= monster.Damage[user.id(s)];
-        user.health[i-1]= monster.Health[user.id(s)];
+        user.inventory[i]=s;
+        user.health[i]= monster.Health[user.id(s)];
+        user.tot_health[i]=monster.Health[user.id(s)];
+        user.level[i]=1;
+        user.exp[i]=0;
+        user.ap[i]=0;
+        user.ad[i]=0;
     }
-    public int c_health(String s,int d){
+    //alter the stats of the user monster
+    public void change(){
+
+    }
+
+    public double c_health(String s,int d){
         user.health[user.ii_id(s)]+=d;
         return user.health[user.ii_id(s)];
+    }
+    public void level_up(int id){
+
     }
 }
