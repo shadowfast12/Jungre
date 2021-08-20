@@ -2,13 +2,14 @@ package attibut;
 
 public class user {
     public static String[] inventory;
-    public static double[] tot_health, health,level,exp,ap,ad;
+    public static double[] tot_health, health,exp,ap,ad;
+    public static int[] level;
 
     public user(){
         inventory= new String[4];
         health=new double[4];
         tot_health=new double[4];
-        level=new double[4];
+        level=new int[4];
         exp=new double[4];
         ad=new double[4];
         ap=new double[4];

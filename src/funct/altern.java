@@ -5,26 +5,44 @@ import attibut.user;
 
 public class altern {
 
+    //set user variables
+    public void set_inven(int id,String s){
+        user.inventory[id]=s;
+    }
+    public void set_health(int id,double h){
+        user.health[id]=h;
+    }
+    public void set_tot_health(int id,double h){
+        user.tot_health[id]=h;
+    }
+    public void set_level(int id,int l){
+        user.level[id]=l;
+    }
+    public void set_exp(int id,double e){
+        user.exp[id]=e;
+    }
+    public void set_ap(int id,double a){
+        user.ap[id]=a;
+    }
+    public void set_ad(int id,double a){
+        user.ad[id]=a;
+    }
     //add monster to user inventory
-    public void add(String s,int i){
-        user.inventory[i]=s;
-        user.health[i]= monster.Health[user.id(s)];
-        user.tot_health[i]=monster.Health[user.id(s)];
-        user.level[i]=1;
-        user.exp[i]=0;
-        user.ap[i]=0;
-        user.ad[i]=0;
-    }
-    //alter the stats of the user monster
-    public void change(){
-
+    public void add(int id,String s){
+        set_inven(id,s);
+        set_health(id,monster.Health[user.id(s)]);
+        set_tot_health(id,monster.Health[user.id(s)]);
+        set_level(id,1);
+        set_exp(id,0);
+        set_ap(id,0);
+        set_ad(id,0);
     }
 
-    public double c_health(String s,int d){
-        user.health[user.ii_id(s)]+=d;
-        return user.health[user.ii_id(s)];
-    }
     public void level_up(int id){
-
+        set_tot_health(id,user.health[id]+5);
+        set_level(id,user.level[id]+1);
+        set_exp(id,0);
+        set_ap(id,3);
+        set_ad(id,3);
     }
 }

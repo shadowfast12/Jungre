@@ -10,9 +10,6 @@ public class main {
         user u = new user();
         altern a=new altern();
 
-        a.add("Drago",1);
-        a.c_health("Drago",13);
-
         System.out.print(u.health(0));
     }
 
