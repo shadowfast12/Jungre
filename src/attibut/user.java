@@ -2,7 +2,7 @@ package attibut;
 
 public class user {
     public static String[] inventory;
-    public static double[] tot_health, health,exp,ap,ad;
+    public static double[] tot_health,health,exp,ap,ad,ap_ar,ad_ar;
     public static int[] level;
 
     public user(){
@@ -13,6 +13,8 @@ public class user {
         exp=new double[4];
         ad=new double[4];
         ap=new double[4];
+        ap_ar=new double[4];
+        ad_ar=new double[4];
     }
 
     public static int id(String s){

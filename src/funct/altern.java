@@ -27,22 +27,31 @@ public class altern {
     public void set_ad(int id,double a){
         user.ad[id]=a;
     }
+    public void set_ap_ar(int id,double a){
+        user.ap_ar[id]=a;
+    }
+    public void set_ad_ar(int id, double a){
+        user.ad_ar[id]=a;
+    }
+
     //add monster to user inventory
     public void add(int id,String s){
         set_inven(id,s);
-        set_health(id,monster.Health[user.id(s)]);
-        set_tot_health(id,monster.Health[user.id(s)]);
+        set_health(id,monster.health[user.id(s)]);
+        set_tot_health(id,monster.health[user.id(s)]);
         set_level(id,1);
         set_exp(id,0);
         set_ap(id,0);
         set_ad(id,0);
+        set_ad_ar(id,monster.ad_ar[user.id(s)]);
+        set_ap_ar(id,monster.ap_ar[user.id(s)]);
     }
 
     public void level_up(int id){
         set_tot_health(id,user.health[id]+5);
         set_level(id,user.level[id]+1);
         set_exp(id,0);
-        set_ap(id,3);
-        set_ad(id,3);
+        set_ap(id,user.ap[id]+3);
+        set_ad(id,user.ad[id]+3);
     }
 }
