@@ -1,7 +1,7 @@
 package attibut;
 
 public class monster {
-
+    //todo add ability energy usage, to restrict ability usage
     public static String[] champs,abilities;
     public static double[] ap_d,ad_d, health,damg_base,ap_ar,ad_ar;
 
@@ -18,10 +18,10 @@ public class monster {
         ap_ar=new double[]{18,22};
         ad_ar=new double[]{24,24};
     }
-    //ability id finder
-    public int abil_id(String s){
-        for(int i=0;i<=abilities.length;i++){
-            if(s.equals(abilities[i])){
+    // id finder
+    public static int id(String s,String[] ar){
+        for(int i=0;i<=ar.length;i++){
+            if(ar[i].equals(s)){
                 return i;
             }
         }

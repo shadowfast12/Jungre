@@ -37,14 +37,14 @@ public class altern {
     //add monster to user inventory
     public void add(int id,String s){
         set_inven(id,s);
-        set_health(id,monster.health[user.id(s)]);
-        set_tot_health(id,monster.health[user.id(s)]);
+        set_health(id,monster.health[monster.id(s,monster.champs)]);
+        set_tot_health(id,monster.health[monster.id(s,monster.champs)]);
         set_level(id,1);
         set_exp(id,0);
         set_ap(id,0);
         set_ad(id,0);
-        set_ad_ar(id,monster.ad_ar[user.id(s)]);
-        set_ap_ar(id,monster.ap_ar[user.id(s)]);
+        set_ad_ar(id,monster.ad_ar[monster.id(s,monster.champs)]);
+        set_ap_ar(id,monster.ap_ar[monster.id(s,monster.champs)]);
     }
 
     public void level_up(int id){

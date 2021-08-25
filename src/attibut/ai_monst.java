@@ -2,7 +2,7 @@ package attibut;
 
 public class ai_monst {
     public static String[] inventory;
-    public static int[] level;
+    public static int[] level,energy;
     public static double[] health,ap,ad,ap_ar,ad_ar;
 
     public ai_monst(){
@@ -13,15 +13,16 @@ public class ai_monst {
         ap=new double[4];
         ad_ar=new double[4];
         ap_ar=new double[4];
+        energy=new int[4];
     }
     public void set(int id,String s,int l){
         inventory[id]=s;
-        health[id]=monster.health[user.id(s)];
+        health[id]=monster.health[monster.id(s,monster.champs)];
         level[id]=l;
         ap[id]=l*3;
         ad[id]=l*3;
-        ad_ar[id]=monster.ad_ar[user.id(s)];
-        ap_ar[id]=monster.ap_ar[user.id(s)];
+        ad_ar[id]=monster.ad_ar[monster.id(s,monster.champs)];
+        ap_ar[id]=monster.ap_ar[monster.id(s,monster.champs)];
     }
 
 }
