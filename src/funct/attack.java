@@ -8,15 +8,15 @@ public class attack {
 
     public static boolean block=false;
     damage d=new damage();
-
+    input in=new input();
     public String insights(int i){
         String s="";
         for(int x=1;x<=3;x++){
-            s+=(monster.abilities[(monster.id(user.inventory[i],
-                    monster.champs)*3)+(x-1)]+" "+x*20+"\n");
+            s+=("Ability "+x+" : "+monster.abilities[(monster.id(
+                    user.inventory[i], monster.champs)*3)+(x-1)]+" : "+x*20+"\n");
         }
-        return (user.inventory[i]+"\n"+user.health[i]+"/"+user.tot_health[i]+
-        "\n"+user.energy[i]+"\n"+s);
+        return ("Name : "+user.inventory[i]+"\nHealth : "+user.health[i]+
+                "/"+user.tot_health[i]+ "\nEnergy : "+user.energy[i]+"\n"+s);
     }
 
     public int use_abi(int e,int cost){
@@ -48,6 +48,9 @@ public class attack {
         }
     }
     public void p_move(String uc,String mc){
+        String get=in.u_input("Ability : ");
+        if(in.u_input("").equals("1")){
 
+        }
     }
 }

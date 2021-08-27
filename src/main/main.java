@@ -12,7 +12,8 @@ public class main {
         altern a=new altern();
         attack at=new attack();
         a.add(0,"Yargo");
-        System.out.println(at.insights(0));
+        a.add(1,"Electroid");
+        System.out.println(at.insights(1));
     }
 
 }
