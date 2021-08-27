@@ -12,4 +12,8 @@ public class damage {
 
         return (ap*(ap_ar))+(ad*(ad_ar))+(base_dm*(ap_ar))+(base_dm*(ad_ar));
     }
+
+    public double ability_out(String c,int abil,double a,double[] ar){
+        return (ar[(monster.id(c,monster.champs)*3)-(3-abil)])*a;
+    }
 }

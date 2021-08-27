@@ -4,6 +4,7 @@ public class user {
     public static String[] inventory;
     public static double[] tot_health,health,exp,ap,ad,ap_ar,ad_ar;
     public static int[] level,energy;
+    public static int curr_int;
 
     public user(){
         inventory=new String[4];
@@ -16,6 +17,7 @@ public class user {
         ap_ar=new double[4];
         ad_ar=new double[4];
         energy=new int[4];
+        curr_int=0;
     }
 
     public double health(int id){

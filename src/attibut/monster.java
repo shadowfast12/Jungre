@@ -20,7 +20,7 @@ public class monster {
     }
     // id finder
     public static int id(String s,String[] ar){
-        for(int i=0;i<=ar.length;i++){
+        for(int i=0;i<ar.length;i++){
             if(ar[i].equals(s)){
                 return i;
             }

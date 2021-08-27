@@ -4,6 +4,7 @@ public class ai_monst {
     public static String[] inventory;
     public static int[] level,energy;
     public static double[] health,ap,ad,ap_ar,ad_ar;
+    public static int curr_id;
 
     public ai_monst(){
         inventory= new String[4];
@@ -14,6 +15,7 @@ public class ai_monst {
         ad_ar=new double[4];
         ap_ar=new double[4];
         energy=new int[4];
+        curr_id=0;
     }
     public void set(int id,String s,int l){
         inventory[id]=s;
