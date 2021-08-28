@@ -83,6 +83,12 @@ public class attack {
         user.energy[monster.id(uc,user.inventory)]=100;
         ai_monst.energy[monster.id(mc,ai_monst.inventory)]=100;
         while(true) {
+            if(user.energy[monster.id(uc,user.inventory)]<=80){
+                user.energy[monster.id(uc,user.inventory)]+=20;
+            }
+            if(ai_monst.energy[monster.id(mc,ai_monst.inventory)]<=80){
+                ai_monst.energy[monster.id(mc,ai_monst.inventory)]+=20;
+            }
             if (ai_monst.health[monster.id(mc, ai_monst.inventory)] <= 0 ||
                     user.health[monster.id(uc, user.inventory)] <= 0) {
                 break;
