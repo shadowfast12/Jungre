@@ -1,5 +1,6 @@
 package main;
 
+import attibut.ai_monst;
 import attibut.monster;
 import attibut.user;
 import funct.altern;
@@ -11,9 +12,11 @@ public class main {
         user u= new user();
         altern a=new altern();
         attack at=new attack();
+        ai_monst ai=new ai_monst();
+
         a.add(0,"Yargo");
-        a.add(1,"Electroid");
-        System.out.println(at.insights(1));
+        ai.set(0,"Electroid",1);
+        at.battle("Yargo","Electroid");
     }
 
 }

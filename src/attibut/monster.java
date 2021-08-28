@@ -14,7 +14,7 @@ public class monster {
         health= new double[]{40d,33d,35d};
         ap_d=new double[]{.1,1,.8,.1,.7,.2,.1,.8,.9};
         ad_d=new double[]{.9,0,.2,.9,.3,.8,.9,.2,.1};
-        damg_base=new double[]{3,5,10,4,6,8,3,7,12};
+        damg_base=new double[]{6,8,13,7,9,11,6,10,15};
         //out of the base 200 armor ap/ad
         ap_ar=new double[]{18,22,16};
         ad_ar=new double[]{24,24,17};
