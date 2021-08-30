@@ -29,12 +29,14 @@ public class attack {
         if(ai_block){
             mult=0.5d;
         }
-        ai_monst.health[monster.id(mc,ai_monst.inventory)]-=(d.damg_put(uc,
+        double damage_dealt=(d.damg_put(uc,
                 d.ability_out(uc,a_num,user.ap[monster.id(uc,user.inventory)],
                         monster.ap_d),d.ability_out(uc,a_num,user.ad[
                         monster.id(uc,user.inventory)], monster.ad_d),
                 ai_monst.ap_ar[monster.id(mc,ai_monst.inventory)],
                 ai_monst.ad_ar[monster.id(mc,ai_monst.inventory)],a_num))*mult;
+        ai_monst.health[monster.id(mc,ai_monst.inventory)]-=damage_dealt;
+        System.out.print(damage_dealt +" damage dealt");
         user.energy[monster.id(uc,user.inventory)]-=(a_num*20);
     }
     public void ai_move(String uc,String mc){
@@ -47,7 +49,7 @@ public class attack {
         }
         for(int i=60;i>=0;i-=20){
             if(ai_monst.energy[m_id]>=i){
-                user.health[u_id]-=(d.damg_put(mc,d.ability_out(mc,
+                double damage_dealt=(d.damg_put(mc,d.ability_out(mc,
                                 i/20,ai_monst.ap[monster.id(mc,ai_monst.
                                         inventory)],monster.ap_d),
                         d.ability_out(mc,
@@ -55,6 +57,8 @@ public class attack {
                                         ai_monst.inventory)],monster.
                                         ad_d), user.ad_ar[u_id],
                         user.ad_ar[u_id],i/20))*mult;
+                user.health[u_id]-=damage_dealt;
+                System.out.println(damage_dealt);
                 ai_monst.energy[m_id]-=i;
                 break;
             }
@@ -65,7 +69,7 @@ public class attack {
         }
     }
     public void p_move(String uc,String mc){
-        String get=in.u_input("Ability : ");
+        String get=in.u_input("Action : ");
         if(get.equals("1") && user.energy[monster.id(uc,user.inventory)]>=20){
             u_ability(uc,mc,1);
         }
@@ -84,10 +88,10 @@ public class attack {
         ai_monst.energy[monster.id(mc,ai_monst.inventory)]=100;
         while(true) {
             if(user.energy[monster.id(uc,user.inventory)]<=80){
-                user.energy[monster.id(uc,user.inventory)]+=20;
+                user.energy[monster.id(uc,user.inventory)]+=10;
             }
             if(ai_monst.energy[monster.id(mc,ai_monst.inventory)]<=80){
-                ai_monst.energy[monster.id(mc,ai_monst.inventory)]+=20;
+                ai_monst.energy[monster.id(mc,ai_monst.inventory)]+=10;
             }
             if (ai_monst.health[monster.id(mc, ai_monst.inventory)] <= 0 ||
                     user.health[monster.id(uc, user.inventory)] <= 0) {
